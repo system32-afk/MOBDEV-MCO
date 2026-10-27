@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+    <color name="bg_screen">#EEF0F8</color>
+    <color name="navy">#16163F</color>
+    <color name="orange">#FF7A2F</color>
+    <color name="white">#FFFFFF</color>
+    <color name="peach">#FDE3D3</color>
+    <color name="lavender">#E1E2F2</color>
+    <color name="text_muted">#5C5F7A</color>
+    <color name="text_light_blue">#C9CCF5</color>
+    <color name="text_disabled">#6B6E8C</color>
+    <color name="switch_off_track">#C8CAE3</color>
 </resources>
