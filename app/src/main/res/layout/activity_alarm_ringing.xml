@@ -9,7 +9,7 @@
     android:paddingTop="24dp"
     android:paddingEnd="24dp"
     android:paddingBottom="32dp"
-    tools:context=".AlarmRingingActivity">
+    tools:context=".activity_alarm_ringing">
 
     <!-- Top row: status pill and ringtone label -->
     <LinearLayout
