@@ -97,26 +97,15 @@
         android:textSize="14sp" />
 
     <Button
-        android:id="@+id/btnStartChallenges"
+        android:id="@+id/btnStopAlarm"
         android:layout_width="match_parent"
         android:layout_height="56dp"
         android:background="@drawable/shape_pill_white"
         android:stateListAnimator="@null"
-        android:text="Start today's challenges"
+        android:text="Picture an object to stop the alarm!"
         android:textAllCaps="false"
         android:textColor="@color/ink"
         android:textSize="16sp"
         android:textStyle="bold" />
 
-    <Button
-        android:id="@+id/btnStopAlarm"
-        android:layout_width="match_parent"
-        android:layout_height="56dp"
-        android:layout_marginTop="12dp"
-        android:background="@drawable/shape_outline_pill"
-        android:stateListAnimator="@null"
-        android:text="Stop alarm"
-        android:textAllCaps="false"
-        android:textColor="@color/main_text_dark"
-        android:textSize="16sp" />
 </LinearLayout>
