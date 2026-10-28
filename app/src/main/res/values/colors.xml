@@ -1,5 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+    <color name="bg_screen">#EEF0F8</color>
+    <color name="navy">#16163F</color>
+    <color name="orange">#FF7A2F</color>
+    <color name="white">#FFFFFF</color>
+    <color name="peach">#FDE3D3</color>
+    <color name="lavender">#E1E2F2</color>
+    <color name="text_muted">#5C5F7A</color>
+    <color name="text_light_blue">#C9CCF5</color>
+    <color name="text_disabled">#6B6E8C</color>
+    <color name="switch_off_track">#C8CAE3</color>
+
+
+
+    <!--  Core  -->
+    <color name="ink">#14163A</color>
+    <color name="sun_orange">#FF7A2F</color>
+    <color name="app_background">#EEF0F7</color>
+    <color name="card_white">#FFFFFF</color>
+    <!--  Supporting (light screens)  -->
+    <color name="muted_light">#55587A</color>
+    <color name="pale_peach">#FFE3D2</color>
+    <color name="soft_lavender">#E1E3F2</color>
+    <color name="disabled_outline">#C3C6DE</color>
+    <!--  Dark screens  -->
+    <color name="raised_dark">#23265A</color>
+    <color name="progress_track_dark">#2A2D5E</color>
+    <color name="muted_dark">#C4C7EA</color>
+    <color name="main_text_dark">#F4F2FF</color>
+    <color name="input_background">#0B0D29</color>
+    <color name="input_border">#4A4E8E</color>
 </resources>

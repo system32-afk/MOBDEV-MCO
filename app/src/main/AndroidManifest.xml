@@ -11,8 +11,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AWAKEMOBDEVMCO">
+
         <activity
-            android:name=".MainActivity"
+            android:name=".activity_alarm_ringing"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -20,6 +21,25 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".activity_today" android:exported="false" />
+        <activity android:name=".activity_alarms_screen" android:exported="false" />
+        <activity android:name=".activity_search_object" android:exported="false" />
+
+        <activity
+            android:name=".activity_daily_walk"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+
+        <!-- Gab's Alarms Screen -->
+<!--        <activity-->
+<!--            android:name=".alarms_screen"-->
+<!--            android:exported="false" />-->
+
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>
