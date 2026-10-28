@@ -1,0 +1,554 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#EEF0F7"
+    tools:context=".SetAlarm">
+
+    <TextView
+        android:id="@+id/repeatTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        android:fontFamily="@font/bricolage_grotesque_semibold"
+        android:text="Repeat"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.041"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="384dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="32dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.592"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/alarmTimeCard">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/sundayBtn"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_margin="3dp"
+                android:background="@drawable/bg_day_selector"
+                android:minWidth="0dp"
+                android:minHeight="0dp"
+                android:padding="0dp"
+                android:state_selected="false"
+                android:text="S"
+                android:textColor="@color/text_day_selector"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/mondayBtn"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_margin="3dp"
+                android:background="@drawable/bg_day_selector"
+                android:minWidth="0dp"
+                android:minHeight="0dp"
+                android:padding="0dp"
+                android:state_selected="true"
+                android:text="M"
+                android:textColor="@color/text_day_selector"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/tuesdayBtn"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_margin="3dp"
+                android:background="@drawable/bg_day_selector"
+                android:minWidth="0dp"
+                android:minHeight="0dp"
+                android:padding="0dp"
+                android:state_selected="true"
+                android:text="T"
+                android:textColor="@color/text_day_selector"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/wednesdayBtn"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_margin="3dp"
+                android:background="@drawable/bg_day_selector"
+                android:minWidth="0dp"
+                android:minHeight="0dp"
+                android:padding="0dp"
+                android:state_selected="true"
+                android:text="W"
+                android:textColor="@color/text_day_selector"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/thursdayBtn"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_margin="3dp"
+                android:background="@drawable/bg_day_selector"
+                android:minWidth="0dp"
+                android:minHeight="0dp"
+                android:padding="0dp"
+                android:state_selected="true"
+                android:text="T"
+                android:textColor="@color/text_day_selector"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/fridayBtn"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_margin="3dp"
+                android:background="@drawable/bg_day_selector"
+                android:minWidth="0dp"
+                android:minHeight="0dp"
+                android:padding="0dp"
+                android:state_selected="true"
+                android:text="F"
+                android:textColor="@color/text_day_selector"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/saturdayBtn"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_margin="3dp"
+                android:background="@drawable/bg_day_selector"
+                android:minWidth="0dp"
+                android:minHeight="0dp"
+                android:padding="0dp"
+                android:state_selected="false"
+                android:text="S"
+                android:textColor="@color/text_day_selector"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/alarmTypeTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        android:fontFamily="@font/bricolage_grotesque_semibold"
+        android:text="Alarm goes off with"
+        app:layout_constraintBottom_toTopOf="@+id/alarmTypeCard"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.053"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/newAlarmTv"
+        android:layout_width="111dp"
+        android:layout_height="28dp"
+        android:layout_marginTop="32dp"
+        android:fontFamily="@font/bricolage_grotesque_bold"
+        android:text="New Alarm"
+        android:textColor="#14163A"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/ringtoneTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        android:fontFamily="@font/bricolage_grotesque_bold"
+        android:text="Ringtone"
+        android:textColor="#14163A"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/radioGroup"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.046"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:orientation="vertical"
+        android:padding="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/saveAlarmBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <RadioButton
+            android:id="@+id/radioDaybreak"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginBottom="12dp"
+            android:background="@drawable/bg_radio_row"
+            android:button="@null"
+            android:checked="true"
+            android:drawableStart="@drawable/selector_radio_circle"
+            android:drawableEnd="@drawable/ic_chevron_right"
+            android:drawablePadding="16dp"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:text="Daybreak"
+            android:textColor="#14163A"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <RadioButton
+            android:id="@+id/radioSlowRise"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginBottom="12dp"
+            android:background="@drawable/bg_radio_row"
+            android:button="@null"
+            android:drawableStart="@drawable/selector_radio_circle"
+            android:drawableEnd="@drawable/ic_chevron_right"
+            android:drawablePadding="16dp"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:text="Slow Rise"
+            android:textColor="#14163A"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <RadioButton
+            android:id="@+id/radioRooster"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:background="@drawable/bg_radio_row"
+            android:button="@null"
+            android:drawableStart="@drawable/selector_radio_circle"
+            android:drawableEnd="@drawable/ic_chevron_right"
+            android:drawablePadding="16dp"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:text="Rooster"
+            android:textColor="#14163A"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/saveAlarmBtn"
+        android:layout_width="353dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="28dp"
+        android:fontFamily="@font/bricolage_grotesque_semibold"
+        android:text="Save Alarm"
+        android:textColor="#14163A"
+        android:textColorLink="#FFFFFF"
+        android:textSize="16sp"
+        app:backgroundTint="#FF7A2F"
+        app:cornerRadius="25sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/dailychallengeCard"
+        android:layout_width="379dp"
+        android:layout_height="107dp"
+        android:layout_marginBottom="36dp"
+        android:background="@drawable/bg_dark_pill"
+        android:backgroundTint="#14163A"
+        android:paddingHorizontal="20dp"
+        android:paddingVertical="14dp"
+        app:cardElevation="6dp"
+        app:layout_constraintBottom_toTopOf="@+id/radioGroup"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageView
+            android:id="@+id/iconContainer"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/shape_orange_circle"
+            android:padding="10dp"
+            android:src="@drawable/ic_flame"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/linearLayout"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.461" />
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="48dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/dailySwitch"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.439">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Daily challenges"
+                android:textColor="#FFFFFF"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:text="Offer to start them after this alarm"
+                android:textColor="#A0A0B0"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:id="@+id/dailySwitch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:thumbTint="@color/switch_tint"
+            app:trackTint="@color/switch_tint" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <Button
+        android:id="@+id/cancelBtn"
+        android:layout_width="107dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="24dp"
+        android:backgroundTint="#EEF0F7"
+        android:fontFamily="@font/bricolage_grotesque_medium"
+        android:text="Cancel"
+        android:textColor="#55587A"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toStartOf="@+id/newAlarmTv"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/alarmTimeCard"
+        android:layout_width="379dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="26dp"
+        android:background="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/newAlarmTv">
+
+        <ImageButton
+            android:id="@+id/minuteUpBtn2"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginEnd="192dp"
+            android:layout_marginBottom="12dp"
+            android:backgroundTint="#FFFFFF"
+            app:layout_constraintBottom_toTopOf="@+id/minuteTv"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0"
+            app:srcCompat="@drawable/ic_chevron_up" />
+
+        <ImageButton
+            android:id="@+id/hourDownBtn"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="72dp"
+            android:layout_marginBottom="8dp"
+            android:backgroundTint="#FFFFFF"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/hourTv"
+            app:layout_constraintVertical_bias="1.0"
+            app:srcCompat="@drawable/ic_chevron_down" />
+
+        <ImageButton
+            android:id="@+id/minuteDownBtn"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginTop="9dp"
+            android:layout_marginEnd="192dp"
+            android:layout_marginBottom="8dp"
+            android:backgroundTint="#FFFFFF"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/minuteTv"
+            app:srcCompat="@drawable/ic_chevron_down" />
+
+        <ImageButton
+            android:id="@+id/hourUpBtn"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="72dp"
+            android:layout_marginBottom="13dp"
+            android:backgroundTint="#FFFFFF"
+            app:layout_constraintBottom_toTopOf="@+id/hourTv"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0"
+            app:srcCompat="@drawable/ic_chevron_up" />
+
+        <TextView
+            android:id="@+id/hourTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/bricolage_grotesque_extrabold"
+            android:text="06"
+            android:textColor="#14163A"
+            android:textSize="44sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/colon"
+            app:layout_constraintHorizontal_bias="0.797"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.506" />
+
+        <TextView
+            android:id="@+id/colon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="128dp"
+            android:fontFamily="@font/bricolage_grotesque_extrabold"
+            android:text=":"
+            android:textColor="#14163A"
+            android:textSize="44sp"
+            android:textStyle="normal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.493" />
+
+        <TextView
+            android:id="@+id/minuteTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:fontFamily="@font/bricolage_grotesque_extrabold"
+            android:text="30"
+            android:textColor="#14163A"
+            android:textSize="44sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/colon"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.493" />
+
+        <!-- PM Button (Default Selected = false) -->
+
+        <TextView
+            android:id="@+id/btnAm"
+            android:layout_width="71dp"
+            android:layout_height="41dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="28dp"
+            android:background="@drawable/bg_am_pm_selector"
+            android:clickable="true"
+            android:focusable="true"
+            android:fontFamily="@font/bricolage_grotesque_extrabold"
+            android:gravity="center"
+            android:text="AM"
+            android:textColor="@color/am_pm_selector"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/btnPm"
+            android:layout_width="71dp"
+            android:layout_height="41dp"
+            android:layout_marginEnd="28dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/bg_am_pm_selector"
+            android:clickable="true"
+            android:focusable="true"
+            android:fontFamily="@font/bricolage_grotesque_extrabold"
+            android:gravity="center"
+            android:text="PM"
+            android:textColor="@color/am_pm_selector"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:id="@+id/alarmTypeCard"
+        android:layout_width="379dp"
+        android:layout_height="52dp"
+        android:background="@drawable/bg_white_pill"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/dailychallengeCard"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:id="@+id/btnAudio"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/bg_am_pm_selector"
+            android:clickable="true"
+            android:focusable="true"
+            android:fontFamily="@font/bricolage_grotesque_extrabold"
+            android:gravity="center"
+            android:text="Audio"
+            android:textColor="@color/am_pm_selector"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/btnVibration"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/bg_am_pm_selector"
+            android:clickable="true"
+            android:focusable="true"
+            android:fontFamily="@font/bricolage_grotesque_extrabold"
+            android:gravity="center"
+            android:text="Vibration"
+            android:textColor="@color/am_pm_selector"
+            android:textSize="13sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/btnBoth"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/bg_am_pm_selector"
+            android:clickable="true"
+            android:focusable="true"
+            android:fontFamily="@font/bricolage_grotesque_extrabold"
+            android:gravity="center"
+            android:text="Both"
+            android:textColor="@color/am_pm_selector"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
