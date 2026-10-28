@@ -24,13 +24,12 @@ public class activity_alarms_screen extends AppCompatActivity {
         //DUMMY DATA
         ArrayList<alarm> alarmItem = new ArrayList<>();
         ArrayList<String> days = new ArrayList<>(Arrays.asList("Monday", "Tuesday", "Wednesday"));
-
-
         alarmItem.add(new alarm("7:30", days, "AM"));
         alarmItem.add(new alarm("7:35", days, "AM"));
 
-        RecyclerView alarms = findViewById(R.id.alarmList);
 
+
+        RecyclerView alarms = findViewById(R.id.alarmList);
         myAdapter adapter = new myAdapter(getApplicationContext(),alarmItem);
 
         alarms.setLayoutManager(new LinearLayoutManager(this));
@@ -45,16 +44,14 @@ public class activity_alarms_screen extends AppCompatActivity {
 
 
 
-        //ON CLICK LISTENERS
+        //ON CLICK LISTENERS FOR NAVIGATION BAR
         todayBtn.setOnClickListener(v -> {
             Intent intent = new Intent(activity_alarms_screen.this, activity_today.class);
-
             startActivity(intent);
         });
 
         badgeBtn.setOnClickListener(v -> {
             Intent intent = new Intent(activity_alarms_screen.this, activity_badges.class);
-
             startActivity(intent);
         });
 
