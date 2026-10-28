@@ -19,11 +19,13 @@ public class TodayActivity extends AppCompatActivity {
 
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_today);
+
         ViewCompat.setOnApplyWindowInsetsListener(
                 findViewById(R.id.main), (v, insets) -> {
                     Insets systemBars = insets.getInsets(
                             WindowInsetsCompat.Type.systemBars()
                     );
+
                     v.setPadding(
                             systemBars.left,
                             systemBars.top,
@@ -34,6 +36,7 @@ public class TodayActivity extends AppCompatActivity {
                     return insets;
                 }
         );
+
         // MIND - Daily Math
         findViewById(R.id.cardMind).setOnClickListener(v -> {
             Toast.makeText(
@@ -50,14 +53,34 @@ public class TodayActivity extends AppCompatActivity {
                     Toast.LENGTH_SHORT
             ).show();
         });
+
         // BODY - Daily Walk
         findViewById(R.id.cardWalk).setOnClickListener(v -> {
             Intent intent = new Intent(
                     TodayActivity.this,
                     DailyWalkActivity.class
             );
-
             startActivity(intent);
+        });
+
+        findViewById(R.id.navToday).setOnClickListener(v -> {
+            // No action needed
+        });
+        // ALARMS
+        findViewById(R.id.navAlarms).setOnClickListener(v -> {
+            Intent intent = new Intent(
+                    TodayActivity.this,
+                    alarms_screen.class
+            );
+            startActivity(intent);
+        });
+        // BADGES
+        findViewById(R.id.navBadges).setOnClickListener(v -> {
+            Toast.makeText(
+                    this,
+                    "Badges screen coming soon",
+                    Toast.LENGTH_SHORT
+            ).show();
         });
     }
 }
