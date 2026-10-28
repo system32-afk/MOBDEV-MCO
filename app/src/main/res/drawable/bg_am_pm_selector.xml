@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Dark pill background when selected -->
+    <item android:drawable="@drawable/bg_dark_pill" android:state_selected="true" />
+    <!-- Light/White pill background when unselected -->
+    <item android:drawable="@drawable/bg_white_pill"  android:state_selected="false" />
+</selector>
