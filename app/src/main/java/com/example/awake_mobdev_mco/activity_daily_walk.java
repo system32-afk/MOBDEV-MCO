@@ -6,7 +6,7 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class DailyWalkActivity extends AppCompatActivity {
+public class activity_daily_walk extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

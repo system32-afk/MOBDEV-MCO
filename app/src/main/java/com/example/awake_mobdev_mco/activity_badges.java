@@ -40,7 +40,7 @@ public class activity_badges extends AppCompatActivity {
             finish();
         });
         findViewById(R.id.navAlarms).setOnClickListener(v -> {
-            startActivity(new Intent(this, alarms_screen.class));
+            startActivity(new Intent(this, activity_alarms_screen.class));
             finish();
         });
         findViewById(R.id.navBadges).setOnClickListener(v -> recreate());

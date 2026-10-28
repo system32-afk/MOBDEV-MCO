@@ -23,15 +23,15 @@
         </activity>
 
         <activity android:name=".activity_today" android:exported="false" />
-        <activity android:name=".alarms_screen" android:exported="false" />
+        <activity android:name=".activity_alarms_screen" android:exported="false" />
 
         <activity
-            android:name=".TodayActivity"
+            android:name=".activity_today"
             android:exported="true"
             android:windowSoftInputMode="adjustResize" />
 
         <activity
-            android:name=".DailyWalkActivity"
+            android:name=".activity_daily_walk"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
 

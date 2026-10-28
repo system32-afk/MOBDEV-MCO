@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="#EEF0F7"
-    tools:context=".TodayActivity">
+    tools:context=".activity_today">
 
     <!-- SCROLLABLE MAIN CONTENT -->
     <ScrollView

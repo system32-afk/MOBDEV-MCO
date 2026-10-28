@@ -2,26 +2,21 @@ package com.example.awake_mobdev_mco;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class alarms_screen extends AppCompatActivity {
+public class activity_alarms_screen extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.alarms_screen);
+        setContentView(R.layout.activity_alarms_screen);
 
         LinearLayout badgeBtn = findViewById(R.id.navBadges);
         LinearLayout todayBtn = findViewById(R.id.navToday);
@@ -42,7 +37,7 @@ public class alarms_screen extends AppCompatActivity {
         alarms.setAdapter(adapter);
 
         adapter.setOnItemClickListener((item, position) -> {
-            Intent intent = new Intent(alarms_screen.this, activity_alarm_ringing.class);
+            Intent intent = new Intent(activity_alarms_screen.this, activity_alarm_ringing.class);
 
             startActivity(intent);
         });
@@ -52,13 +47,13 @@ public class alarms_screen extends AppCompatActivity {
 
         //ON CLICK LISTENERS
         todayBtn.setOnClickListener(v -> {
-            Intent intent = new Intent(alarms_screen.this, TodayActivity.class);
+            Intent intent = new Intent(activity_alarms_screen.this, activity_today.class);
 
             startActivity(intent);
         });
 
         badgeBtn.setOnClickListener(v -> {
-            Intent intent = new Intent(alarms_screen.this, activity_badges.class);
+            Intent intent = new Intent(activity_alarms_screen.this, activity_badges.class);
 
             startActivity(intent);
         });
