@@ -1,6 +1,7 @@
 
 package com.example.awake_mobdev_mco;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
 
@@ -16,6 +17,9 @@ public class activity_daily_walk extends AppCompatActivity {
 
         TextView btnBack = findViewById(R.id.btnBack);
 
-        btnBack.setOnClickListener(v -> finish());
+        btnBack.setOnClickListener(v ->{
+            Intent intent = new Intent (activity_daily_walk.this, activity_today.class);
+            startActivity(intent);
+        });
     }
 }

@@ -2,18 +2,21 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-feature android:name="android.hardware.camera.any" android:required="false" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/ic_launcher_background"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/ic_launcher_background"
         android:supportsRtl="true"
         android:theme="@style/Theme.AWAKEMOBDEVMCO">
 
         <activity
-            android:name=".activity_alarm_ringing"
+            android:name=".activity_today"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -22,19 +25,25 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".activity_today" android:exported="false" />
+        <!-- MAIN MENUS -->
         <activity android:name=".activity_alarms_screen" android:exported="false" />
-        <activity android:name=".activity_search_object" android:exported="false" />
+        <activity android:name=".activity_badges" android:exported="false" />
+        <activity android:name=".SetAlarm" android:exported="false" />
 
+
+        <activity android:name=".activity_alarm_ringing" android:exported="false" />
+
+
+        <!-- Challenges -->
+        <activity android:name=".activity_search_object" android:exported="false" />
+        <activity android:name=".activity_shake_challenge" android:exported="false" />
+        <activity android:name=".DailyMath" android:exported="false" />
         <activity
             android:name=".activity_daily_walk"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
 
-        <!-- Gab's Alarms Screen -->
-<!--        <activity-->
-<!--            android:name=".alarms_screen"-->
-<!--            android:exported="false" />-->
+
 
 
         <meta-data

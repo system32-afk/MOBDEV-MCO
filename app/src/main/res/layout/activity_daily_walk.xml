@@ -18,12 +18,12 @@
             android:id="@+id/btnBack"
             android:layout_width="wrap_content"
             android:layout_height="48dp"
-            android:gravity="center_vertical"
-            android:text="‹  Back"
-            android:textColor="#F4F2FF"
-            android:textSize="18sp"
             android:clickable="true"
-            android:focusable="true" />
+            android:focusable="true"
+            android:gravity="center_vertical"
+            android:text="‹  Home"
+            android:textColor="#F4F2FF"
+            android:textSize="18sp" />
 
         <TextView
             android:layout_width="match_parent"

@@ -47,11 +47,11 @@ public class activity_today extends AppCompatActivity {
         });
         // ENERGY - Daily Shake
         findViewById(R.id.cardEnergy).setOnClickListener(v -> {
-            Toast.makeText(
-                    this,
-                    "Energy challenge clicked",
-                    Toast.LENGTH_SHORT
-            ).show();
+            Intent intent = new Intent(
+                    activity_today.this,
+                    activity_shake_challenge.class
+            );
+            startActivity(intent);
         });
 
         // BODY - Daily Walk
