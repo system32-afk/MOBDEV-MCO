@@ -41,6 +41,10 @@
             android:name=".activity_alarm_ringing"
             android:exported="false" />
 
+        <activity
+            android:name=".activity_badges"
+            android:exported="false" />
+
 
         <meta-data
             android:name="preloaded_fonts"

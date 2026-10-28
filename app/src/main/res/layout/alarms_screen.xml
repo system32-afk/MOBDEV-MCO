@@ -226,7 +226,8 @@
                     android:layout_height="24dp"
                     android:contentDescription="Badges"
                     android:src="@drawable/badge"
-                    app:tint="@color/navy" />
+                    app:tint="@color/navy"/>
+
 
                 <TextView
                     android:layout_width="wrap_content"

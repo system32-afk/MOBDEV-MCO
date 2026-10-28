@@ -76,11 +76,11 @@ public class TodayActivity extends AppCompatActivity {
         });
         // BADGES
         findViewById(R.id.navBadges).setOnClickListener(v -> {
-            Toast.makeText(
-                    this,
-                    "Badges screen coming soon",
-                    Toast.LENGTH_SHORT
-            ).show();
+            Intent intent = new Intent(
+                    TodayActivity.this,
+                    activity_badges.class
+            );
+            startActivity(intent);
         });
     }
 }
