@@ -13,7 +13,7 @@
         android:theme="@style/Theme.AWAKEMOBDEVMCO">
 
         <activity
-            android:name=".MainActivity"
+            android:name=".alarms_screen"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -33,8 +33,12 @@
             android:windowSoftInputMode="adjustResize" />
 
         <!-- Gab's Alarms Screen -->
+<!--        <activity-->
+<!--            android:name=".alarms_screen"-->
+<!--            android:exported="false" />-->
+
         <activity
-            android:name=".alarms_screen"
+            android:name=".activity_alarm_ringing"
             android:exported="false" />
 
 
