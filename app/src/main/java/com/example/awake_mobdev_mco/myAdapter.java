@@ -39,6 +39,14 @@ public class myAdapter extends RecyclerView.Adapter<myViewHolder> {
         holder.switchBtn.setChecked(data.get(position).isEnabled());
         applySwitchColors(holder, data.get(position).isEnabled());
 
+        holder.switchBtn.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            int pos = holder.getBindingAdapterPosition();
+            if (pos == RecyclerView.NO_POSITION) return;
+
+            data.get(pos).setEnabled(isChecked);
+            applySwitchColors(holder, isChecked);
+        });
+
         holder.itemView.setOnClickListener(v -> {
             int pos = holder.getBindingAdapterPosition();
             if (listener != null && pos != RecyclerView.NO_POSITION) {
@@ -54,7 +62,7 @@ public class myAdapter extends RecyclerView.Adapter<myViewHolder> {
 
 
     private void applySwitchColors(myViewHolder holder, boolean isOn) {
-        int track = ContextCompat.getColor(context, isOn ? R.color.orange : R.color.switch_off_track);
+        int track = ContextCompat.getColor(context, isOn ? R.color.navy : R.color.switch_off_track);
         holder.switchBtn.setTrackTintList(ColorStateList.valueOf(track));
     }
     //DELETE THIS. THIS IS FOR MCO2 ONLY FOR GOING TO THE CHALLENGES

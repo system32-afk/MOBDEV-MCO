@@ -22,6 +22,7 @@ public class myViewHolder extends RecyclerView.ViewHolder {
         this.time = itemView.findViewById(R.id.timeLbl);
         this.days = itemView.findViewById(R.id.daysLbl);
         switchBtn = itemView.findViewById(R.id.alarmSwitch);
+
     }
 
     public myViewHolder onCreateViewHolder(ViewGroup parent, int viewType){

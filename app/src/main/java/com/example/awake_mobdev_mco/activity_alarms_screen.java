@@ -2,11 +2,14 @@ package com.example.awake_mobdev_mco;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Button;
 import android.widget.LinearLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -20,6 +23,7 @@ public class activity_alarms_screen extends AppCompatActivity {
 
         LinearLayout badgeBtn = findViewById(R.id.navBadges);
         LinearLayout todayBtn = findViewById(R.id.navToday);
+        FloatingActionButton addAlarm = findViewById(R.id.addAlarmBtn);
 
         //DUMMY DATA
         ArrayList<alarm> alarmItem = new ArrayList<>();
@@ -43,6 +47,10 @@ public class activity_alarms_screen extends AppCompatActivity {
         alarms.setAdapter(adapter);
 
 
+        addAlarm.setOnClickListener(v -> {
+            Intent intent = new Intent(activity_alarms_screen.this, SetAlarm.class);
+            startActivity(intent);
+        });
 
         //ON CLICK LISTENERS FOR NAVIGATION BAR
         todayBtn.setOnClickListener(v -> {

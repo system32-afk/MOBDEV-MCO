@@ -28,7 +28,8 @@
         <!-- MAIN MENUS -->
         <activity android:name=".activity_alarms_screen" android:exported="false" />
         <activity android:name=".activity_badges" android:exported="false" />
-        <!--WAITING FOR THEO'S MAIN MENU-->
+        <activity android:name=".SetAlarm" android:exported="false" />
+
 
         <activity android:name=".activity_alarm_ringing" android:exported="false" />
 
@@ -36,12 +37,13 @@
         <!-- Challenges -->
         <activity android:name=".activity_search_object" android:exported="false" />
         <activity android:name=".activity_shake_challenge" android:exported="false" />
+        <activity android:name=".DailyMath" android:exported="false" />
         <activity
             android:name=".activity_daily_walk"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
 
-        <!--WAITING FOR THEO'S CHALLENGE-->
+
 
 
         <meta-data
