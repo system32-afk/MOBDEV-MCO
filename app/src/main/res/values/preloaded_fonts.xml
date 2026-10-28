@@ -2,5 +2,6 @@
 <resources>
     <array name="preloaded_fonts" translatable="false">
         <item>@font/bricolage_grotesque_extrabold</item>
+        <item>@font/bricolage_grotesque_medium</item>
     </array>
 </resources>

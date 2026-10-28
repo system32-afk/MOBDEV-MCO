@@ -40,6 +40,8 @@ dependencies {
     implementation(libs.material)
     implementation(libs.activity)
     implementation(libs.constraintlayout)
+    implementation(libs.cardview)
+    implementation(libs.cardview.v7)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
