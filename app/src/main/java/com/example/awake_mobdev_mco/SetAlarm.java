@@ -103,7 +103,7 @@ public class SetAlarm extends AppCompatActivity {
         cancelBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(SetAlarm.this, MainActivity.class);
+                Intent intent = new Intent(SetAlarm.this, activity_alarms_screen.class);
                 finish();
             }
         });
@@ -111,7 +111,7 @@ public class SetAlarm extends AppCompatActivity {
         submitBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(SetAlarm.this, MainActivity.class);
+                Intent intent = new Intent(SetAlarm.this, activity_alarms_screen.class);
                 startActivity(intent);
                 Toast.makeText(SetAlarm.this, "Alarm Saved", Toast.LENGTH_SHORT).show();
             }
