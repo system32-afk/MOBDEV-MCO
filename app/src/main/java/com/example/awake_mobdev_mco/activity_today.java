@@ -39,11 +39,11 @@ public class activity_today extends AppCompatActivity {
 
         // MIND - Daily Math
         findViewById(R.id.cardMind).setOnClickListener(v -> {
-            Toast.makeText(
-                    this,
-                    "Mind challenge clicked",
-                    Toast.LENGTH_SHORT
-            ).show();
+            Intent intent = new Intent(
+                    activity_today.this,
+                    DailyMath.class
+            );
+            startActivity(intent);
         });
         // ENERGY - Daily Shake
         findViewById(R.id.cardEnergy).setOnClickListener(v -> {
