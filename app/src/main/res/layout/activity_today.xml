@@ -52,6 +52,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="🔥 5-day streak"
+                    android:id="@+id/tvStreak"
                     android:textColor="#FFFFFF"
                     android:textSize="22sp"
                     android:textStyle="bold" />
@@ -158,6 +159,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="0 of 3 done"
+                    android:id="@+id/tvChallengesDone"
                     android:textSize="12sp"
                     android:textColor="#55587A" />
             </LinearLayout>
@@ -302,57 +304,42 @@
                 android:clickable="true"
                 android:focusable="true"
                 android:orientation="vertical"
+
                 android:padding="14dp">
 
                 <LinearLayout
 
                     android:layout_width="match_parent"
-
                     android:layout_height="wrap_content"
-
                     android:orientation="horizontal"
-
                     android:gravity="center_vertical">
 
-
                     <TextView
-
                         android:layout_width="0dp"
-
                         android:layout_height="wrap_content"
-
                         android:layout_weight="1"
-
                         android:text="👣   Body · Daily walk"
-
                         android:textColor="#14163A"
-
                         android:textSize="14sp"
-
                         android:textStyle="bold" />
 
-
                     <TextView
-
                         android:layout_width="wrap_content"
-
                         android:layout_height="wrap_content"
-
                         android:text="❯"
-
                         android:textColor="#14163A"
-
                         android:textSize="20sp" />
 
                 </LinearLayout>
 
                 <ProgressBar
+                    android:id="@+id/todayWalkProgress"
                     style="?android:attr/progressBarStyleHorizontal"
                     android:layout_width="match_parent"
                     android:layout_height="6dp"
                     android:layout_marginTop="12dp"
                     android:max="6000"
-                    android:progress="3240"
+                    android:progress="0"
                     android:progressTint="#FF7A2F"
                     android:progressBackgroundTint="#E1E3F2" />
             </LinearLayout>
@@ -408,7 +395,6 @@
         </LinearLayout>
     </ScrollView>
 
-    <!-- Matching bottom navigation from Alarms screen -->
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/bottomNav"
         android:layout_width="match_parent"
