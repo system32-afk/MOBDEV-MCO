@@ -1,39 +1,34 @@
 package com.example.awake_mobdev_mco;
 
+import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
 
 public class MyDbHelper extends SQLiteOpenHelper {
     public static MyDbHelper instance = null;
 
-    private MyDbHelper(Context context) {
+    public MyDbHelper(Context context) {
         super(context, DbReferences.DATABASE_NAME, null, DbReferences.DATABASE_VERSION);
     }
 
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
-        sqLiteDatabase.execSQL(DbReferences.CREATE_ALARMS_TABLE);
-        sqLiteDatabase.execSQL(DbReferences.CREATE_DAYS_TABLE);
-        sqLiteDatabase.execSQL(DbReferences.CREATE_METHODS_TABLE);
-        sqLiteDatabase.execSQL(DbReferences.CREATE_DAILY_CHALLENGES_TABLE);
-        sqLiteDatabase.execSQL(DbReferences.CREATE_MATH_CHALLENGE_TABLE);
-        sqLiteDatabase.execSQL(DbReferences.CREATE_WALK_CHALLENGE_TABLE);
-        sqLiteDatabase.execSQL(DbReferences.CREATE_SHAKE_CHALLENGE_TABLE);
+
+        sqLiteDatabase.execSQL(DbReferences.CREATE_CHALLENGE_COMPLETION_TABLE);
     }
 
     // Called when a new version of the DB is present; hence, an "upgrade" to a newer version
     @Override
-    public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
-        sqLiteDatabase.execSQL(DbReferences.CREATE_ALARMS_TABLE);
-        sqLiteDatabase.execSQL(DbReferences.CREATE_DAYS_TABLE);
-        sqLiteDatabase.execSQL(DbReferences.CREATE_METHODS_TABLE);
-        sqLiteDatabase.execSQL(DbReferences.CREATE_DAILY_CHALLENGES_TABLE);
-        sqLiteDatabase.execSQL(DbReferences.CREATE_MATH_CHALLENGE_TABLE);
-        sqLiteDatabase.execSQL(DbReferences.CREATE_WALK_CHALLENGE_TABLE);
-        sqLiteDatabase.execSQL(DbReferences.CREATE_SHAKE_CHALLENGE_TABLE);
-
-        onCreate(sqLiteDatabase);
+    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+        db.execSQL("DROP TABLE IF EXISTS " + DbReferences.TABLE_CHALLENGE_COMPLETION);
+        onCreate(db);
     }
 
     public static synchronized MyDbHelper getInstance(Context context) {
@@ -120,6 +115,29 @@ public class MyDbHelper extends SQLiteOpenHelper {
 //        return database.update(DbReferences.TABLE_NAME,values,"id=?",new String[]{ String.valueOf(c.getId()) });
 //
 //    }
+
+
+
+    //USE THIS WHEN RECORDING DAILY CHALLENGES AS DONE
+    public synchronized void recordChallenge(String challengeType) {
+        ContentValues values = new ContentValues();
+        long now = System.currentTimeMillis();
+        values.put("challengeType", challengeType);
+        values.put("epoch", now);
+        values.put("day", new SimpleDateFormat("yyyy-MM-dd", Locale.US).format(new Date(now)));
+        getWritableDatabase().insert(DbReferences.TABLE_CHALLENGE_COMPLETION, null, values);
+    }
+
+    public synchronized void logChallengeCompletions() {
+        String sql = "SELECT * FROM " + DbReferences.TABLE_CHALLENGE_COMPLETION + " ORDER BY epoch DESC";
+        try (Cursor c = getReadableDatabase().rawQuery(sql, null)) {
+            Log.d("CHALLENGE_DB", "rows: " + c.getCount());
+            while (c.moveToNext()) {
+                Log.d("CHALLENGE_DB", c.getLong(0) + " | " + c.getString(1)
+                        + " | " + c.getLong(2) + " | " + c.getString(3));
+            }
+        }
+    }
     private final class DbReferences {
         public static final int DATABASE_VERSION = 1;
         public static final String DATABASE_NAME = "awake_db.db";
@@ -134,13 +152,15 @@ public class MyDbHelper extends SQLiteOpenHelper {
 //           COLUMN_NAME_METHODID = "methodID",
 //                COLUMN_NAME_DAY = "day";
 
-    private static final String CREATE_ALARMS_TABLE =
-                "CREATE TABLE IF NOT EXISTS " + "alarms_tbl" + " (" +
-                        "alarmID" + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                        "time" + " TEXT, " +
-                        "dayID" + " INTEGER FOREIGN KEY, " +
-                        "methodID" + " INTEGER FOREIGN KEY, " +
-                        "isDailyChallenge" + "INTEGER)";
+        private static final String CREATE_ALARMS_TABLE =
+                "CREATE TABLE IF NOT EXISTS alarms_tbl (" +
+                        "alarmID INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                        "time TEXT, " +
+                        "dayID INTEGER, " +
+                        "methodID INTEGER, " +
+                        "isDailyChallenge INTEGER, " +
+                        "FOREIGN KEY (dayID) REFERENCES days_tbl(dayID), " +
+                        "FOREIGN KEY (methodID) REFERENCES methods_tbl(methodID))";
 
     private static final String CREATE_DAYS_TABLE =
             "CREATE TABLE IF NOT EXISTS " + "days_tbl" + " (" +
@@ -175,6 +195,14 @@ public class MyDbHelper extends SQLiteOpenHelper {
                     "shakeID" + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
                     "shakes" + " INTEGER )";
 
+        private static final String TABLE_CHALLENGE_COMPLETION = "challenge_completion_tbl";
+
+        private static final String CREATE_CHALLENGE_COMPLETION_TABLE =
+                "CREATE TABLE IF NOT EXISTS " + TABLE_CHALLENGE_COMPLETION + " (" +
+                        "id INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                        "challengeType TEXT NOT NULL, " +
+                        "epoch INTEGER NOT NULL, " +
+                        "day TEXT NOT NULL)";
 //        private static final String DROP_TABLE_STATEMENT =
 //                "DROP TABLE IF EXISTS " + TABLE_NAME;
 
