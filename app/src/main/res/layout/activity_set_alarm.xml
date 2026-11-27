@@ -18,12 +18,13 @@
         app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.041"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/alarmTimeCard" />
 
     <LinearLayout
         android:id="@+id/linearLayout2"
-        android:layout_width="384dp"
-        android:layout_height="48dp"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
         android:layout_marginTop="32dp"
         android:gravity="center"
         android:orientation="vertical"
@@ -155,18 +156,20 @@
         app:layout_constraintBottom_toTopOf="@+id/alarmTypeCard"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.053"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
 
     <TextView
         android:id="@+id/newAlarmTv"
         android:layout_width="111dp"
         android:layout_height="28dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="16dp"
         android:fontFamily="@font/bricolage_grotesque_bold"
         android:text="New Alarm"
         android:textColor="#14163A"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -186,8 +189,8 @@
 
     <RadioGroup
         android:id="@+id/radioGroup"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="385dp"
+        android:layout_height="203dp"
         android:layout_marginBottom="8dp"
         android:orientation="vertical"
         android:padding="16dp"
@@ -267,7 +270,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/dailychallengeCard"
-        android:layout_width="379dp"
+        android:layout_width="wrap_content"
         android:layout_height="107dp"
         android:layout_marginBottom="36dp"
         android:background="@drawable/bg_dark_pill"
@@ -277,7 +280,8 @@
         app:cardElevation="6dp"
         app:layout_constraintBottom_toTopOf="@+id/radioGroup"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/alarmTypeCard">
 
         <ImageView
             android:id="@+id/iconContainer"
@@ -338,7 +342,7 @@
         android:id="@+id/cancelBtn"
         android:layout_width="107dp"
         android:layout_height="48dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="16dp"
         android:backgroundTint="#EEF0F7"
         android:fontFamily="@font/bricolage_grotesque_medium"
         android:text="Cancel"
@@ -351,7 +355,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/alarmTimeCard"
-        android:layout_width="379dp"
+        android:layout_width="329dp"
         android:layout_height="150dp"
         android:layout_marginTop="26dp"
         android:background="#FFFFFF"
@@ -497,13 +501,15 @@
 
     <LinearLayout
         android:id="@+id/alarmTypeCard"
-        android:layout_width="379dp"
+        android:layout_width="358dp"
         android:layout_height="52dp"
-        android:background="@drawable/bg_white_pill"
+        android:layout_marginTop="4dp"
         android:layout_marginBottom="16dp"
+        android:background="@drawable/bg_white_pill"
         app:layout_constraintBottom_toTopOf="@+id/dailychallengeCard"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/alarmTypeTv">
 
         <TextView
             android:id="@+id/btnAudio"

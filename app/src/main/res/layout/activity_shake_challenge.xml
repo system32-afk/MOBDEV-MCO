@@ -8,30 +8,18 @@
     tools:layout_editor_absoluteX="0dp"
     tools:layout_editor_absoluteY="-17dp">
 
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="67dp"
-        android:layout_height="70dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="16dp"
-        android:backgroundTint="#21215B"
-        app:cornerRadius="100dp"
-        app:icon="@drawable/back"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="92dp"
         android:fontFamily="@font/bricolage_grotesque_extrabold"
         android:text="ENERGY CHALLENGE"
         android:textColor="@color/orange"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button2" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView2"
@@ -58,7 +46,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
     <ProgressBar
-        android:id="@+id/progressBar2"
+        android:id="@+id/completionBar"
         style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="280dp"
         android:layout_height="280dp"
@@ -80,13 +68,13 @@
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
         android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="@+id/progressBar2"
-        app:layout_constraintEnd_toEndOf="@+id/progressBar2"
-        app:layout_constraintStart_toStartOf="@+id/progressBar2"
-        app:layout_constraintTop_toTopOf="@+id/progressBar2">
+        app:layout_constraintBottom_toBottomOf="@+id/completionBar"
+        app:layout_constraintEnd_toEndOf="@+id/completionBar"
+        app:layout_constraintStart_toStartOf="@+id/completionBar"
+        app:layout_constraintTop_toTopOf="@+id/completionBar">
 
         <TextView
-            android:id="@+id/textView4"
+            android:id="@+id/timerText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/bricolage_grotesque_extrabold"
@@ -116,10 +104,10 @@
         android:textColor="@color/white"
         android:textSize="14sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/progressBar2" />
+        app:layout_constraintTop_toBottomOf="@+id/completionBar" />
 
     <ProgressBar
-        android:id="@+id/progressBar"
+        android:id="@+id/intensityBar"
         style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="0dp"
         android:layout_height="12dp"
@@ -147,7 +135,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/progressBar"
+        app:layout_constraintTop_toBottomOf="@+id/intensityBar"
         app:layout_constraintVertical_bias="0.64" />
 
     <Button
@@ -159,6 +147,46 @@
         android:text="navigate to next screen"
         app:layout_constraintBottom_toTopOf="@+id/textView7"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/progressBar" />
+        app:layout_constraintTop_toBottomOf="@+id/intensityBar" />
+
+    <TextView
+        android:id="@+id/testX"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="137dp"
+        android:text="TextView"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toTopOf="@+id/testY"
+        app:layout_constraintEnd_toStartOf="@+id/testButton"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/testY"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="137dp"
+        android:text="TextView"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toTopOf="@+id/testZ"
+        app:layout_constraintEnd_toStartOf="@+id/testButton"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/testZ"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="137dp"
+        android:layout_marginBottom="192dp"
+        android:text="TextView"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/testButton"
+        app:layout_constraintHorizontal_bias="0.842"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

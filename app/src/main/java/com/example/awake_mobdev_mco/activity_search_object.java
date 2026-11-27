@@ -38,7 +38,7 @@ public class activity_search_object extends AppCompatActivity {
         takePicBtn = findViewById(R.id.takePicBtn);
 
         takePicBtn.setOnClickListener(v -> {
-            Intent intent = new Intent(activity_search_object.this, activity_shake_challenge.class); //CHANGE THIS IF NAGAWA NA NI THEO PART NIYA
+            Intent intent = new Intent(activity_search_object.this, DailyMath.class); //CHANGE THIS IF NAGAWA NA NI THEO PART NIYA
             startActivity(intent);
         });
 

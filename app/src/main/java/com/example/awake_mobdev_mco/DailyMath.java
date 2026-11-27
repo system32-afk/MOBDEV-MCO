@@ -1,5 +1,6 @@
 package com.example.awake_mobdev_mco;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.widget.Button;
@@ -61,7 +62,7 @@ public class DailyMath extends AppCompatActivity {
 
         problemList = new ArrayList<>();
         problemList.add(new mathProblem("12 * 12 + 64",208));
-        problemList.add(new mathProblem("15 × 4 - 10",60));
+        problemList.add(new mathProblem("15 × 4 - 10",50));
         problemList.add(new mathProblem("9 × 9 - 14",67));
         problemList.add(new mathProblem("120 ÷ 4 + 15", 45));
         problemList.add(new mathProblem("90 ÷ 3 + 20", 50));
@@ -98,8 +99,8 @@ public class DailyMath extends AppCompatActivity {
                             Toast.makeText(this, "Correct!", Toast.LENGTH_SHORT).show();
                         }
                         else{
-                            Toast.makeText(this, "You have answered all the questions!", Toast.LENGTH_SHORT).show();
-                            finish();
+                            Intent intent = new Intent (DailyMath.this, activity_shake_challenge.class);
+                            startActivity(intent);
                         }
                     } else{
                         Toast.makeText(this, "Incorrect! Try again.", Toast.LENGTH_SHORT).show();

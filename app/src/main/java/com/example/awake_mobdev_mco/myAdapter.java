@@ -1,12 +1,14 @@
 package com.example.awake_mobdev_mco;
 
 import android.content.Context;
+import android.content.res.ColorStateList;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 
 import androidx.annotation.NonNull;
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
@@ -33,6 +35,17 @@ public class myAdapter extends RecyclerView.Adapter<myViewHolder> {
         holder.setDays(data.get(position).getDays().toString());
         holder.setTime(data.get(position).getTime());
 
+        holder.switchBtn.setOnCheckedChangeListener(null);
+        holder.switchBtn.setChecked(data.get(position).isEnabled());
+        applySwitchColors(holder, data.get(position).isEnabled());
+
+        holder.switchBtn.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            int pos = holder.getBindingAdapterPosition();
+            if (pos == RecyclerView.NO_POSITION) return;
+
+            data.get(pos).setEnabled(isChecked);
+            applySwitchColors(holder, isChecked);
+        });
 
         holder.itemView.setOnClickListener(v -> {
             int pos = holder.getBindingAdapterPosition();
@@ -47,6 +60,11 @@ public class myAdapter extends RecyclerView.Adapter<myViewHolder> {
     }
 
 
+
+    private void applySwitchColors(myViewHolder holder, boolean isOn) {
+        int track = ContextCompat.getColor(context, isOn ? R.color.navy : R.color.switch_off_track);
+        holder.switchBtn.setTrackTintList(ColorStateList.valueOf(track));
+    }
     //DELETE THIS. THIS IS FOR MCO2 ONLY FOR GOING TO THE CHALLENGES
     public interface OnItemClickListener {
         void onItemClick(alarm item, int position);

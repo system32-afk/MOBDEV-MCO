@@ -8,12 +8,17 @@ public class alarm {
     private ArrayList<String> days;
     private String sound;
 
+    private boolean enabled;
     private String dayPart; //AM OR PM (this is the closest thing i saw lang lol)
 
     public alarm(String time, ArrayList<String> days, String dayPart) {
         this.time = time;
         this.days = days;
         this.dayPart = dayPart;
+    }
+
+    public void setEnabled(boolean enabled) {
+        enabled = enabled;
     }
 
     public void setTime(String time) {
@@ -46,5 +51,9 @@ public class alarm {
 
     public String getDayPart() {
         return dayPart;
+    }
+
+    public boolean isEnabled() {
+        return enabled;
     }
 }

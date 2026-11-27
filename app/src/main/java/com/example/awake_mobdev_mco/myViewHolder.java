@@ -8,8 +8,12 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.material.materialswitch.MaterialSwitch;
+import com.google.android.material.switchmaterial.SwitchMaterial;
+
 public class myViewHolder extends RecyclerView.ViewHolder {
 
+    MaterialSwitch switchBtn;
     private TextView time;
     private TextView days;
 
@@ -17,12 +21,14 @@ public class myViewHolder extends RecyclerView.ViewHolder {
         super(itemView);
         this.time = itemView.findViewById(R.id.timeLbl);
         this.days = itemView.findViewById(R.id.daysLbl);
+        switchBtn = itemView.findViewById(R.id.alarmSwitch);
 
     }
 
     public myViewHolder onCreateViewHolder(ViewGroup parent, int viewType){
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
         View view =inflater.inflate(R.layout.alarmitemlayout,parent,false);
+        switchBtn = itemView.findViewById(R.id.alarmSwitch);
 
         myViewHolder myviewholder = new myViewHolder(view);
         return  myviewholder;
