@@ -51,7 +51,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="🔥 5-day streak"
+                    android:text="🔥 0-day streak"
                     android:id="@+id/tvStreak"
                     android:textColor="#FFFFFF"
                     android:textSize="22sp"
@@ -73,51 +73,57 @@
                     android:orientation="horizontal">
 
                     <TextView
+                        android:id="@+id/tvMonday"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:gravity="center"
-                        android:text="●&#10;M"
-                        android:textColor="#FF7A2F"
+                        android:text="○&#10;M"
+                        android:textColor="#C4C7EA"
                         android:textSize="18sp" />
 
                     <TextView
+                        android:id="@+id/tvTuesday"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:gravity="center"
-                        android:text="●&#10;T"
-                        android:textColor="#FF7A2F"
+                        android:text="○&#10;T"
+                        android:textColor="#C4C7EA"
                         android:textSize="18sp" />
 
                     <TextView
+                        android:id="@+id/tvWednesday"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:gravity="center"
-                        android:text="●&#10;W"
-                        android:textColor="#FF7A2F"
+                        android:text="○&#10;W"
+                        android:textColor="#C4C7EA"
                         android:textSize="18sp" />
 
                     <TextView
+                        android:id="@+id/tvThursday"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:gravity="center"
-                        android:text="●&#10;T"
-                        android:textColor="#FF7A2F"
+                        android:text="○&#10;T"
+                        android:textColor="#C4C7EA"
                         android:textSize="18sp" />
 
                     <TextView
+                        android:id="@+id/tvFriday"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:gravity="center"
-                        android:text="●&#10;F"
-                        android:textColor="#FF7A2F"
+                        android:text="○&#10;F"
+                        android:textColor="#C4C7EA"
                         android:textSize="18sp" />
 
                     <TextView
+                        android:id="@+id/tvSaturday"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -127,6 +133,7 @@
                         android:textSize="18sp" />
 
                     <TextView
+                        android:id="@+id/tvSunday"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -218,15 +225,14 @@
 
                 </LinearLayout>
 
-                <ProgressBar
-                    style="?android:attr/progressBarStyleHorizontal"
-                    android:layout_width="match_parent"
-                    android:layout_height="6dp"
-                    android:layout_marginTop="12dp"
-                    android:max="100"
-                    android:progress="33"
-                    android:progressTint="#FF7A2F"
-                    android:progressBackgroundTint="#E1E3F2" />
+                <TextView
+                    android:id="@+id/tvMathStatus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Not yet completed"
+                    android:textColor="#55587A"
+                    android:textSize="12sp" />
             </LinearLayout>
 
             <!-- DAILY SHAKE CARD -->
@@ -253,45 +259,31 @@
 
 
                     <TextView
-
                         android:layout_width="0dp"
-
                         android:layout_height="wrap_content"
-
                         android:layout_weight="1"
-
                         android:text="⚡   Energy · Daily shake"
-
                         android:textColor="#14163A"
-
                         android:textSize="14sp"
-
                         android:textStyle="bold" />
 
-
                     <TextView
-
                         android:layout_width="wrap_content"
-
                         android:layout_height="wrap_content"
-
                         android:text="❯"
-
                         android:textColor="#14163A"
-
                         android:textSize="20sp" />
 
                 </LinearLayout>
 
-                <ProgressBar
-                    style="?android:attr/progressBarStyleHorizontal"
-                    android:layout_width="match_parent"
-                    android:layout_height="6dp"
-                    android:layout_marginTop="12dp"
-                    android:max="100"
-                    android:progress="45"
-                    android:progressTint="#FF7A2F"
-                    android:progressBackgroundTint="#E1E3F2" />
+                <TextView
+                    android:id="@+id/tvShakeStatus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Not yet completed"
+                    android:textColor="#55587A"
+                    android:textSize="12sp" />
             </LinearLayout>
 
             <!-- DAILY WALK CARD -->
@@ -332,16 +324,14 @@
 
                 </LinearLayout>
 
-                <ProgressBar
-                    android:id="@+id/todayWalkProgress"
-                    style="?android:attr/progressBarStyleHorizontal"
-                    android:layout_width="match_parent"
-                    android:layout_height="6dp"
-                    android:layout_marginTop="12dp"
-                    android:max="100"
-                    android:progress="0"
-                    android:progressTint="#FF7A2F"
-                    android:progressBackgroundTint="#E1E3F2" />
+                <TextView
+                android:id="@+id/tvWalkStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Not yet completed"
+                android:textColor="#55587A"
+                android:textSize="12sp" />
             </LinearLayout>
 
             <LinearLayout
@@ -379,7 +369,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="4dp"
-                        android:text="2 more days to earn it!"
+                        android:id="@+id/tvBadgeProgress"
+                        android:text="7 more days to earn it!"
                         android:textColor="#55587A"
                         android:textSize="12sp" />
                 </LinearLayout>

@@ -128,6 +128,26 @@ public class MyDbHelper extends SQLiteOpenHelper {
         getWritableDatabase().insert(DbReferences.TABLE_CHALLENGE_COMPLETION, null, values);
     }
 
+    // Check if a daily challenge is completed
+    public synchronized boolean isChallengeCompleted(String challengeType, String day) {
+        String sql = "SELECT 1 FROM " + DbReferences.TABLE_CHALLENGE_COMPLETION +
+                " WHERE challengeType = ? AND day = ? LIMIT 1";
+
+        try (Cursor c = getReadableDatabase().rawQuery(
+                sql, new String[]{challengeType, day})) {
+            return c.moveToFirst();
+        }
+    }
+    public synchronized int getCompletedChallengeCount(String day) {     // count completed daily challenges
+        String sql = "SELECT COUNT(DISTINCT challengeType) FROM " +
+                DbReferences.TABLE_CHALLENGE_COMPLETION +
+                " WHERE day = ? AND challengeType IN ('MATH', 'SHAKE', 'WALK')";
+
+        try (Cursor c = getReadableDatabase().rawQuery(
+                sql, new String[]{day})) {
+            return c.moveToFirst() ? c.getInt(0) : 0;
+        }
+    }
     public synchronized void logChallengeCompletions() {
         String sql = "SELECT * FROM " + DbReferences.TABLE_CHALLENGE_COMPLETION + " ORDER BY epoch DESC";
         try (Cursor c = getReadableDatabase().rawQuery(sql, null)) {
