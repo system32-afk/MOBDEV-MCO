@@ -123,13 +123,13 @@ public class activity_today extends AppCompatActivity {
         // Read today's saved step count
         if (today.equals(savedDate)) {
             steps = preferences.getInt("daily_steps", 0);
-            walkCompleted = steps >= 6000;
+            walkCompleted = steps >= 100;
         }
 
         // Body Daily Walk progress bar
-        todayWalkProgress.setMax(6000);
+        todayWalkProgress.setMax(100);
         todayWalkProgress.setProgress(
-                Math.min(steps, 6000)
+                Math.min(steps, 100)
         );
         // math and shake completion not done yet
         int completedChallenges = walkCompleted ? 1 : 0;

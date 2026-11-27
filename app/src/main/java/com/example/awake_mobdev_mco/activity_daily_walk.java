@@ -29,13 +29,11 @@ import java.util.Locale;
 public class activity_daily_walk extends AppCompatActivity
         implements SensorEventListener {
 
-    private static final int STEP_GOAL = 6000;
+    private static final int STEP_GOAL = 100;
     private static final int PERMISSION_REQUEST_CODE = 102;
-
     private SensorManager sensorManager;
     private Sensor stepCounterSensor;
     private SharedPreferences preferences;
-
     private TextView tvSteps;
     private TextView tvRemaining;
     private TextView tvWalkStatus;
@@ -43,7 +41,6 @@ public class activity_daily_walk extends AppCompatActivity
     private TextView milestone3000;
     private TextView milestone6000;
     private ProgressBar walkProgress;
-
     private int dailySteps = 0;
 
     @Override
@@ -79,7 +76,6 @@ public class activity_daily_walk extends AppCompatActivity
                 MODE_PRIVATE
         );
 
-        // Get the Android step counter sensor
         sensorManager = (SensorManager)
                 getSystemService(Context.SENSOR_SERVICE);
 
@@ -102,8 +98,6 @@ public class activity_daily_walk extends AppCompatActivity
             checkActivityPermission();
         }
     }
-
-    // Get today's date for daily progress
     private String getTodayDate() {
         return new SimpleDateFormat(
                 "yyyy-MM-dd",
@@ -129,9 +123,10 @@ public class activity_daily_walk extends AppCompatActivity
         } else {
             dailySteps = preferences.getInt("daily_steps", 0);
         }
+        preferences.edit()
+                .putBoolean("walk_completed", dailySteps >= STEP_GOAL)
+                .apply();
     }
-
-    // Request activity recognition permission
     private void checkActivityPermission() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
             if (ContextCompat.checkSelfPermission(
@@ -152,8 +147,6 @@ public class activity_daily_walk extends AppCompatActivity
 
         startStepCounter();
     }
-
-    // Start listening for actual steps
     private void startStepCounter() {
         if (stepCounterSensor != null &&
                 sensorManager != null) {
@@ -165,27 +158,31 @@ public class activity_daily_walk extends AppCompatActivity
             );
         }
     }
+
     @Override
     public void onSensorChanged(SensorEvent event) {
         if (event.sensor.getType() != Sensor.TYPE_STEP_COUNTER) {
             return;
         }
+
         int totalSensorSteps = (int) event.values[0];
-        // Reset daily progress when the date changes
+
         if (!getTodayDate().equals(
                 preferences.getString("walk_date", "")
         )) {
             loadDailyProgress();
         }
+
         int lastSensorSteps = preferences.getInt(
                 "last_sensor_steps", -1
         );
+
         if (lastSensorSteps >= 0) {
             if (totalSensorSteps >= lastSensorSteps) {
                 dailySteps += totalSensorSteps - lastSensorSteps;
             }
-            // Keep saved progress and start from the new reading.
         }
+
         preferences.edit()
                 .putString("walk_date", getTodayDate())
                 .putInt("daily_steps", dailySteps)
@@ -198,7 +195,7 @@ public class activity_daily_walk extends AppCompatActivity
 
         updateWalkUI();
     }
-    // Update steps, progress bar, milestones, and status
+    // steps, progress bar, milestones, and status
     private void updateWalkUI() {
         NumberFormat format = NumberFormat.getIntegerInstance();
 
@@ -219,36 +216,38 @@ public class activity_daily_walk extends AppCompatActivity
         );
 
         milestone1000.setText(
-                dailySteps >= 1000
-                        ? "✓  1,000 steps completed"
-                        : "○  1,000 steps"
+                dailySteps >= 25
+                        ? "✓  25 steps completed"
+                        : "○  25 steps"
         );
-
         milestone3000.setText(
-                dailySteps >= 3000
-                        ? "✓  3,000 steps completed"
-                        : "○  3,000 steps"
+                dailySteps >= 50
+                        ? "✓  50 steps completed"
+                        : "○  50 steps"
         );
-
+        // UPDATED:100 steps
         milestone6000.setText(
                 dailySteps >= STEP_GOAL
-                        ? "✓  6,000 steps completed"
-                        : "○  6,000 steps — Daily goal"
+                        ? "✓  100 steps completed"
+                        : "○  100 steps — Daily goal"
         );
 
         int completedColor = ContextCompat.getColor(
                 this, android.R.color.holo_orange_light
         );
+
         int pendingColor = android.graphics.Color.parseColor(
                 "#C4C7EA"
         );
 
         milestone1000.setTextColor(
-                dailySteps >= 1000 ? completedColor : pendingColor
+                dailySteps >= 25 ? completedColor : pendingColor
         );
+
         milestone3000.setTextColor(
-                dailySteps >= 3000 ? completedColor : pendingColor
+                dailySteps >= 50 ? completedColor : pendingColor
         );
+
         milestone6000.setTextColor(
                 dailySteps >= STEP_GOAL ? completedColor : pendingColor
         );
@@ -260,14 +259,11 @@ public class activity_daily_walk extends AppCompatActivity
             tvWalkStatus.setText("Challenge in progress");
         }
     }
-
     @Override
     public void onAccuracyChanged(
             Sensor sensor, int accuracy
     ) {
-        // No action needed
     }
-
     @Override
     protected void onResume() {
         super.onResume();
@@ -281,7 +277,6 @@ public class activity_daily_walk extends AppCompatActivity
             checkActivityPermission();
         }
     }
-
     @Override
     protected void onPause() {
         super.onPause();
@@ -291,7 +286,6 @@ public class activity_daily_walk extends AppCompatActivity
             sensorManager.unregisterListener(this);
         }
     }
-
     @Override
     public void onRequestPermissionsResult(
             int requestCode,

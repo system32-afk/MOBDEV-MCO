@@ -50,7 +50,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="50dp"
             android:gravity="center"
-            android:text="3,240"
+            android:text="0"
             android:textColor="#FF7A2F"
             android:textSize="56sp"
             android:textStyle="bold" />
@@ -59,7 +59,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="of 6,000 steps"
+            android:text="of 100 steps"
             android:textColor="#F4F2FF"
             android:textSize="18sp" />
 
@@ -69,8 +69,8 @@
             android:layout_width="match_parent"
             android:layout_height="12dp"
             android:layout_marginTop="30dp"
-            android:max="6000"
-            android:progress="3240"
+            android:max="100"
+            android:progress="0"
             android:progressTint="#FF7A2F"
             android:progressBackgroundTint="#2A2D5E" />
 
@@ -80,7 +80,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:gravity="center"
-            android:text="2,760 steps remaining"
+            android:text="100 steps remaining"
             android:textColor="#C4C7EA"
             android:textSize="15sp" />
 
@@ -107,8 +107,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="18dp"
-                android:text="✓  1,000 steps completed"
-                android:textColor="#FF7A2F"
+                android:text="○  25 steps"
+                android:textColor="#C4C7EA"
                 android:textSize="15sp" />
 
             <TextView
@@ -116,8 +116,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="14dp"
-                android:text="✓  3,000 steps completed"
-                android:textColor="#FF7A2F"
+                android:text="○  50 steps "
+                android:textColor="#C4C7EA"
                 android:textSize="15sp" />
 
             <TextView
@@ -125,7 +125,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="14dp"
-                android:text="○  6,000 steps — Daily goal"
+                android:text="○  100 steps — Daily goal"
                 android:textColor="#C4C7EA"
                 android:textSize="15sp" />
 
