@@ -255,6 +255,16 @@ public class activity_daily_walk extends AppCompatActivity
         if (dailySteps >= STEP_GOAL) {
             tvRemaining.setText("Daily goal reached!");
             tvWalkStatus.setText("Challenge completed!");
+
+            String today = getTodayDate();
+
+            if (!today.equals(preferences.getString("walk_recorded_date", ""))) {
+                MyDbHelper.getInstance(this).recordChallenge("WALK");
+
+                preferences.edit()
+                        .putString("walk_recorded_date", today)
+                        .apply();
+            }
         } else {
             tvWalkStatus.setText("Challenge in progress");
         }
@@ -281,7 +291,6 @@ public class activity_daily_walk extends AppCompatActivity
     protected void onPause() {
         super.onPause();
 
-        // Stop listening when this screen is not visible
         if (sensorManager != null) {
             sensorManager.unregisterListener(this);
         }
